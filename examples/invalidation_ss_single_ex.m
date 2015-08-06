@@ -44,7 +44,7 @@ for i=1:20
     
     % Apply the invalidation function.
     % The noise bound here is smaller than the bound used to generate data.
-    result=InvalidationSS(sys2,input,output,pn_bound,mn_bound*0.95,...
+    result=invalidation_ss(sys2,input,output,pn_bound,mn_bound*0.95,...
         state_bound,'cplex');
     
     % Display invalidation result.

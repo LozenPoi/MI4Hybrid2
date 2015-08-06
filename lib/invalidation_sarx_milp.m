@@ -1,4 +1,4 @@
-function [Decision,sol,Constraint,e,s] = SARX_MILP(SYS,input,output,...
+function [Decision,sol,Constraint,e,s] = invalidation_sarx_milp(SYS,input,output,...
     mn_bound,input_bound,solver)
 
 % This function implements MILP-based model invalidation approach for the
@@ -32,8 +32,8 @@ function [Decision,sol,Constraint,e,s] = SARX_MILP(SYS,input,output,...
 %   sol -- A solution structure that is the output of YALMIP
 %
 % Syntax:
-%   Decision = SARX_MILP(SYS,input,output,mn_bound,input_bound);
-%   Decision = SARX_MILP(SYS,input,output,mn_bound,input_bound,solver);
+%   Decision = invalidation_sarx_milp(SYS,input,output,mn_bound,input_bound);
+%   Decision = invalidation_sarx_milp(SYS,input,output,mn_bound,input_bound,solver);
 %
 % Author: MI4Hybrid
 % Date: July 15th, 2015

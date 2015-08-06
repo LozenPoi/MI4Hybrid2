@@ -1,4 +1,4 @@
-%% Example for ARX_MILP function
+%% Example for invalidation_sarx_milp function
 clear,close all
 addpath('../lib/')
 
@@ -29,9 +29,8 @@ for l = 1:10
 [ym,p_noise,m_noise,switchseq]=swarx_sim(sys,input,[],[],mn_bound,[],[],0);
 
 % invalidationARX Approach 
-result=InvalidationARX(sys,input,ym,pn_bound,mn_bound*0.98)
+result=invalidation_arx(sys,input,ym,pn_bound,mn_bound*0.98)
 
 % MILP Approach
-[Decision, sol,Constraints,e,s]= SARX_MILP(sys,input,ym,[0.5 0.5]*0.98,[100 100 100],'cplex');
-Decision
+Decision= invalidation_sarx_milp(sys,input,ym,[0.5 0.5]*0.98,[100 100 100],'cplex')
 end

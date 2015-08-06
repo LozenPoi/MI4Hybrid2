@@ -1,4 +1,4 @@
-%% Example for SS_MILP function
+%% Example for invalidation_swa_milp function
 clear,close all
 addpath('../lib/')
 
@@ -27,8 +27,8 @@ switchseq = randi(1,1,T);
 [output,p_noise,m_noise,switchseq]=swss_sim(sys,input,[],pn_bound_test,mn_bound,[],state_bound,...
     switchseq,0);
 
-result=InvalidationSS(sys,input,output,pn_bound_test,mn_bound_test,state_bound)
+result=invalidation_ss(sys,input,output,pn_bound_test,mn_bound_test,state_bound)
 
 % Model invalidation
-Decision = SWA_MILP(sys,input,output,mn_bound_test,1000,state_bound, 'cplex')
+Decision = invalidation_swa_milp(sys,input,output,mn_bound_test,1000,state_bound, 'cplex')
 end

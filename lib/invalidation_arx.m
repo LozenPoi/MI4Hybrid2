@@ -1,4 +1,4 @@
-function result=InvalidationARX(sys,input,output,pn_bound,mn_bound,solver)
+function result=invalidation_arx(sys,input,output,pn_bound,mn_bound,solver)
 
 % This function applies the invalidation algorithm for ARX models based on
 % the system input and output. This invlidation algorithm is made to check
@@ -21,10 +21,10 @@ function result=InvalidationARX(sys,input,output,pn_bound,mn_bound,solver)
 %   result -- return "true" if the system is validated, otherwise "false"
 %
 % Syntax:
-%   result=InvalidationARX(sys,input,output,pn_bound,mn_bound);
-%   result=InvalidationARX(sys,input,output,pn_bound,mn_bound,solver);
+%   result=invalidation_arx(sys,input,output,pn_bound,mn_bound);
+%   result=invalidation_arx(sys,input,output,pn_bound,mn_bound,solver);
 %
-% Author: Z. Luo, F. Harirchi and N. Ozay
+% Author: MI4Hybrid
 % Date: June 22nd, 2015
 
 % Check if the system model is valid for this function.

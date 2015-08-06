@@ -1,4 +1,4 @@
-function result=InvalidationSS(sys,input,output,pn_bound,mn_bound,...
+function result=invalidation_ss(sys,input,output,pn_bound,mn_bound,...
     state_bound,solver)
 
 % This function applies the invalidation algorithm for state-space models
@@ -23,11 +23,11 @@ function result=InvalidationSS(sys,input,output,pn_bound,mn_bound,...
 %   result -- return "true" if the system is validated, otherwise "false"
 %
 % Syntax:
-%   result=InvalidationSS(sys,input,output,pn_bound,mn_bound,state_bound);
-%   result=InvalidationSS(sys,input,output,pn_bound,mn_bound,...
+%   result=invalidation_ss(sys,input,output,pn_bound,mn_bound,state_bound);
+%   result=Invalidation_ss(sys,input,output,pn_bound,mn_bound,...
 %                           state_bound,solver);
 %
-% Author: Z. Luo, F. Harirchi and N. Ozay
+% Author: MI4Hybrid
 % Date: July 8th, 2015
 
 % Check if the system model is valid for this function.
@@ -91,7 +91,7 @@ end
 if(length(input)~=length(output))
     error('The input length and output length are not consistent.');
 end
-% Check if the input is consistent with with the model.
+% Check if the input is consistent with the model.
 if(size(input,1)~=size(sys.mode.B,2))
     error('The input is not consistent with the model.');
 end
