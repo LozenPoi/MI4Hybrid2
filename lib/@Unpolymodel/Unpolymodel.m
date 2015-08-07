@@ -1,14 +1,14 @@
-classdef Unpolymodel < polymodel
+classdef UnPolyModel < PolyModel
     
     % This class describes a (not switched) polynomial model with parameter
     % uncertainty, that is, the coefficient matrix of the model has the form
     % coeffmat = coeffmat_true + delta_coeffmat.
     %
     % Syntax:
-    %   sys=Unpolymodel(sys,d_coeffmat);
-    %   sys=Unpolymodel(degmat,coeffmat,d_coeffmat);
-    %   sys=Unpolymodel(degmat,coeffmat,d_coeffmat,pn_norm,mn_norm);
-    %   sys=Unpolymodel(degmat,coeffmat,d_coeffmat,pn_norm,mn_norm,Ep,Em);
+    %   sys=UnPolyModel(sys,d_coeffmat);
+    %   sys=UnPolyModel(degmat,coeffmat,d_coeffmat);
+    %   sys=UnPolyModel(degmat,coeffmat,d_coeffmat,pn_norm,mn_norm);
+    %   sys=UnPolyModel(degmat,coeffmat,d_coeffmat,pn_norm,mn_norm,Ep,Em);
     %
     % Author: MI4Hybrid
     % Date: June 5th, 2015
@@ -21,7 +21,7 @@ classdef Unpolymodel < polymodel
     
     methods
         
-        function sys=Unpolymodel(varargin)
+        function sys=UnPolyModel(varargin)
             
             % To be able to convert a system model from superclass to subclass.
             if(nargin==2&&isa(varargin{1},'polymodel'))
@@ -78,7 +78,7 @@ classdef Unpolymodel < polymodel
             end
             
             % Call the constructor of the super class.
-            sys@polymodel(degmat,coeffmat,pn_norm,mn_norm,Ep,Em);
+            sys@PolyModel(degmat,coeffmat,pn_norm,mn_norm,Ep,Em);
             
             % Assign the uncertainty constraints.
             sys.d_coeffmat=d_coeffmat;

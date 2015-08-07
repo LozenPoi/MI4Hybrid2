@@ -1,4 +1,4 @@
-classdef polymodel
+classdef PolyModel
     
     % This class describes a discrete-time (not switched) polynomial model.
     % A general polynomial model has the form:
@@ -7,9 +7,9 @@ classdef polymodel
     % where pn is the process noise and mn is the measurement noise.
     %
     % Syntax:
-    %   sys=polymodel(degmat,coeffmat);
-    %   sys=polymodel(degmat,coeffmat,pn_norm,mn_norm);
-    %   sys=polymodel(degmat,coeffmat,pn_norm,mn_norm,Ep,Em);
+    %   sys=PolyModel(degmat,coeffmat);
+    %   sys=PolyModel(degmat,coeffmat,pn_norm,mn_norm);
+    %   sys=PolyModel(degmat,coeffmat,pn_norm,mn_norm,Ep,Em);
     % Each row of degmat represents a monomial. The number of coulumns of
     % degmat is the number of states plus the number of inputs. Each row of
     % coeffmat represent a polynomial. The number of columns of coeffmat is
@@ -43,7 +43,7 @@ classdef polymodel
     
     methods
         
-        function sys=polymodel(degmat,coeffmat,pn_norm,mn_norm,Ep,Em)
+        function sys=PolyModel(degmat,coeffmat,pn_norm,mn_norm,Ep,Em)
             
             % Check the consistency of degmat and coeffmat.
             [n,n_m]=size(coeffmat);

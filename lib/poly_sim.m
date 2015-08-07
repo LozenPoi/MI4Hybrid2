@@ -2,11 +2,11 @@ function [y,p_noise,m_noise]=poly_sim(sys,input,ini_cond,pn_bound,...
     mn_bound,input_bound,flag)
 
 % This function simulates a polynomial model with a giving input sequence.
-% The system output is the measurement of states (see polymodel.m for more
+% The system output is the measurement of states (see PolyModel.m for more
 % information).
 %
 % Arguments:
-%   sys -- a user-defined system class (see polymodel.m)
+%   sys -- a user-defined system class (see PolyModel.m)
 %   input -- input sequence (an n_i-by-T matrix) where n_i is the dimension
 %            of input and T is the time horizon
 %   ini_cond -- initial condition for polynomial models (an n-by-1 column
@@ -25,12 +25,12 @@ function [y,p_noise,m_noise]=poly_sim(sys,input,ini_cond,pn_bound,...
 %   m_noise -- the generated measurement noise
 %
 % Syntax:
-%   [y,p_noise,m_noise]=swarx_sim(sys,input);
-%   [y,p_noise,m_noise]=swarx_sim(sys,input,ini_cond);
-%   [y,p_noise,m_noise]=swarx_sim(sys,input,ini_cond,pn_bound,mn_bound);
-%   [y,p_noise,m_noise]=swarx_sim(sys,input,ini_cond,pn_bound,mn_bound,...
+%   [y,p_noise,m_noise]=poly_sim(sys,input);
+%   [y,p_noise,m_noise]=poly_sim(sys,input,ini_cond);
+%   [y,p_noise,m_noise]=poly_sim(sys,input,ini_cond,pn_bound,mn_bound);
+%   [y,p_noise,m_noise]=poly_sim(sys,input,ini_cond,pn_bound,mn_bound,...
 %                                 input_bound);
-%   [y,p_noise,m_noise]=swarx_sim(sys,input,ini_cond,pn_bound,mn_bound,...
+%   [y,p_noise,m_noise]=poly_sim(sys,input,ini_cond,pn_bound,mn_bound,...
 %                                 input_bound,flag);
 %
 % Author: Z. Luo, F. Harirchi and N. Ozay
